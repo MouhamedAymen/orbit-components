@@ -1,8 +1,13 @@
 {
-  "presets": ["react", "env"],
+  "presets": [
+    "react-native",
+    "react",
+    "env"
+  ],
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    "react-native-web"
   ]
 }

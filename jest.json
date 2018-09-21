@@ -3,5 +3,6 @@
     "raf/polyfill",
     "./config/enzymeConfig"
   ],
-  "snapshotSerializers": ["enzyme-to-json/serializer"]
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "preset": "react-native-web"
 }

@@ -1,13 +1,18 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+// Cannot get eslint to properly alias 'react-native' to 'react-native-web'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Image } from "react-native";
 
 import defaultTokens from "../defaultTokens";
 import { baseURL, CODES } from "./consts";
 
 import type { Props } from "./index";
 
-const StyledCountryFlag = styled.img`
+// min-height necessary as height: auto; gives 0 because of parent containers being 0.
+const StyledCountryFlag = styled(Image)`
+  min-height: 13px;
   height: ${({ theme }) => theme.orbit.heightCountryFlag};
   width: ${({ theme }) => theme.orbit.widthCountryFlag};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
@@ -23,8 +28,9 @@ const CountryFlag = (props: Props) => {
   return (
     <StyledCountryFlag
       key={code}
-      src={`${baseURL}/flags/24x0/flag-${code}.jpg`}
-      srcSet={`${baseURL}/flags/48x0/flag-${code}.jpg 2x`}
+      source={{ uri: `https:${baseURL}/flags/24x0/flag-${code}.jpg`, width: 24, height: 13 }}
+      // Still no support for multiple sources https://github.com/necolas/react-native-web/issues/515
+      // srcSet={`${baseURL}/flags/48x0/flag-${code}.jpg 2x`}
       alt={name}
       title={name}
     />
