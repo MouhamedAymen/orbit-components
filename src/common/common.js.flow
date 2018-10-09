@@ -2,3 +2,5 @@
 export type Globals = {|
   +dataTest?: string,
 |};
+
+export type Translation = React$Element<React$ComponentType<any>> | string;

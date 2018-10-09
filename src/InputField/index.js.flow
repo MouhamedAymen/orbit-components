@@ -1,14 +1,14 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 export type Props = {|
   +size?: "small" | "normal",
   +type?: "text" | "number" | "email" | "password",
   +name?: string,
-  +label?: string,
+  +label?: Translation,
   +inlineLabel?: boolean,
   +value?: string,
-  +placeholder?: string,
+  +placeholder?: Translation,
   +prefix?: React$Node,
   +suffix?: React$Node,
   +help?: React$Node,
