@@ -1,0 +1,809 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Floating Card Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "800px",
+              }
+            }
+          >
+            <div
+              className="FloatingCard__FloatingWrapper-sc-1tbsjxg-0 kUWbgh"
+              size={
+                Object {
+                  "height": 0,
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                className="Card__StyledCard-ff0z2v-1 iuQByM"
+              >
+                <div
+                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                >
+                  <div
+                    className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
+                  >
+                    <div
+                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
+                    >
+                      <div
+                        className="CardHeader__StyledIcon-lvjkay-3 iZWBAS"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                          />
+                        </svg>
+                      </div>
+                      <h2
+                        className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                      >
+                        FloatingCard title
+                      </h2>
+                    </div>
+                    <div
+                      className="CardHeader__StyledSubTitle-lvjkay-2 bAlmQl"
+                    >
+                      <p
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      >
+                        This is a floating card
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                >
+                  <div
+                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                  >
+                    <div
+                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                    >
+                      <div
+                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          subtitle
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    >
+                      <div />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                >
+                  <div
+                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                  >
+                    <div
+                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                    >
+                      <div
+                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          subtitle
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    >
+                      <div />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                >
+                  <div
+                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                  >
+                    <div
+                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                    >
+                      <div
+                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          subtitle
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    >
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          div
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              style
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      height
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    '800px'
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            FloatingCard
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                offset
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    10
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Card
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              CardHeader
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;Airplane /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                              </span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  title
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      FloatingCard title
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                              </span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  subTitle
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      This is a floating card
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                 
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              /&gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              CardSection
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  subTitle
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      subtitle
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                 
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              /&gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              CardSection
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  subTitle
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      subtitle
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                 
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              /&gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              CardSection
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  subTitle
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      subtitle
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                 
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              /&gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Card
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            FloatingCard
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          div
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
