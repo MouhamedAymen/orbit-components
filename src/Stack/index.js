@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import media from "../utils/media";
+import media from "../utils/mediaQuery";
 import defaultTokens from "../defaultTokens";
 import { ALIGNS, DIRECTIONS, SPACINGS, TOKENS } from "./consts";
 import { StyledButton } from "../Button";
@@ -91,65 +91,65 @@ const StyledStack = styled(({ className, children }) => (
     align-self: ${({ align }) => getAlign(align, true)};
   }
 
-  ${media.desktop`
-      & > * {
-        margin: ${getSpacing(true)};
-      }
+  ${media.desktop(css`
+    & > * {
+      margin: ${getSpacing(true)};
+    }
 
-      // TODO other block components
-      & > ${StyledButton} {
-        align-self: ${({ desktop, align }) =>
-          desktop &&
-          desktop.align !== align &&
-          getAlign(desktop.align === ALIGNS.EVEN ? ALIGNS.START : desktop.align)};
-      }
-
-      ${({ desktop }) =>
+    // TODO other block components
+    & > ${StyledButton} {
+      align-self: ${({ desktop, align }) =>
         desktop &&
-        css`
-          display: ${({ inline }) =>
-            isDefined(desktop.inline) &&
-            inline !== desktop.inline &&
-            (desktop.inline ? "inline-flex" : "flex")};
-          flex-direction: ${({ direction }) =>
-            isDefined(desktop.direction) &&
-            direction !== desktop.direction &&
-            (desktop.direction === DIRECTIONS.ROW ? "row" : "column")};
-          flex-wrap: ${({ wrap }) =>
-            isDefined(desktop.wrap) && wrap !== desktop.wrap && (desktop.wrap ? "wrap" : "nowrap")};
-          flex-grow: ${({ grow }) =>
-            isDefined(desktop.grow) && grow !== desktop.grow && (desktop.grow ? "1" : "0")};
-          flex-shrink: ${({ shrink }) =>
-            isDefined(desktop.shrink) && shrink !== desktop.shrink && (desktop.shrink ? "1" : "0")};
-          flex-basis: ${({ basis }) =>
-            isDefined(desktop.basis) && basis !== desktop.basis && desktop.basis};
-          justify-content: ${({ flex, align, direction }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.ROW &&
-            getAlign(desktop.align || align)};
-          align-content: ${({ align, direction, flex }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.COLUMN &&
-            getAlign(desktop.align || align)};
-          align-items: ${({ align, direction, flex }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.COLUMN &&
-            getAlign(desktop.align || align)};
-          margin-bottom: ${({ theme, spaceAfter }) =>
-            isDefined(desktop.spaceAfter) &&
-            spaceAfter !== desktop.spaceAfter &&
-            getSpacingToken({ spaceAfter: desktop.spaceAfter, theme })};
-        `}
-    `};
+        desktop.align !== align &&
+        getAlign(desktop.align === ALIGNS.EVEN ? ALIGNS.START : desktop.align)};
+    }
+
+    ${({ desktop }) =>
+      desktop &&
+      css`
+        display: ${({ inline }) =>
+          isDefined(desktop.inline) &&
+          inline !== desktop.inline &&
+          (desktop.inline ? "inline-flex" : "flex")};
+        flex-direction: ${({ direction }) =>
+          isDefined(desktop.direction) &&
+          direction !== desktop.direction &&
+          (desktop.direction === DIRECTIONS.ROW ? "row" : "column")};
+        flex-wrap: ${({ wrap }) =>
+          isDefined(desktop.wrap) && wrap !== desktop.wrap && (desktop.wrap ? "wrap" : "nowrap")};
+        flex-grow: ${({ grow }) =>
+          isDefined(desktop.grow) && grow !== desktop.grow && (desktop.grow ? "1" : "0")};
+        flex-shrink: ${({ shrink }) =>
+          isDefined(desktop.shrink) && shrink !== desktop.shrink && (desktop.shrink ? "1" : "0")};
+        flex-basis: ${({ basis }) =>
+          isDefined(desktop.basis) && basis !== desktop.basis && desktop.basis};
+        justify-content: ${({ flex, align, direction }) =>
+          flex &&
+          desktop &&
+          desktop.direction &&
+          (direction !== desktop.direction || align !== desktop.align) &&
+          desktop.direction === DIRECTIONS.ROW &&
+          getAlign(desktop.align || align)};
+        align-content: ${({ align, direction, flex }) =>
+          flex &&
+          desktop &&
+          desktop.direction &&
+          (direction !== desktop.direction || align !== desktop.align) &&
+          desktop.direction === DIRECTIONS.COLUMN &&
+          getAlign(desktop.align || align)};
+        align-items: ${({ align, direction, flex }) =>
+          flex &&
+          desktop &&
+          desktop.direction &&
+          (direction !== desktop.direction || align !== desktop.align) &&
+          desktop.direction === DIRECTIONS.COLUMN &&
+          getAlign(desktop.align || align)};
+        margin-bottom: ${({ theme, spaceAfter }) =>
+          isDefined(desktop.spaceAfter) &&
+          spaceAfter !== desktop.spaceAfter &&
+          getSpacingToken({ spaceAfter: desktop.spaceAfter, theme })};
+      `};
+  `)};
 `;
 
 StyledStack.defaultProps = {

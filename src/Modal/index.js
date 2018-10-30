@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import SIZES from "./consts";
-import media from "../utils/media";
+import media from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
@@ -40,10 +40,10 @@ const ModalBody = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   font-family: ${({ theme }) => theme.orbit.fontfamily};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     overflow-y: auto;
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
- `};
+  `)};
 `;
 
 ModalBody.defaultProps = {
@@ -64,12 +64,12 @@ const ModalWrapper = styled.div`
   transition: top ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     position: relative;
     top: 0;
     max-width: ${getSize};
     align-items: center;
-  `};
+  `)};
 `;
 
 ModalWrapper.defaultProps = {
@@ -159,7 +159,7 @@ const ModalWrapperContent = styled.div`
     opacity: ${({ scrolled }) => scrolled && "1"};
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     position: relative;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding-bottom: 0;
@@ -181,7 +181,7 @@ const ModalWrapperContent = styled.div`
       position: absolute;
       top: 0;
     }
-  `};
+  `)};
 `;
 
 ModalWrapperContent.defaultProps = {

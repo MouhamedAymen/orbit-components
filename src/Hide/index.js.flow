@@ -1,0 +1,11 @@
+// @flow
+
+type On = "largeDesktop" | "desktop" | "tablet" | "largeMobile" | "mediumMobile" | "smallMobile";
+
+export type Props = {|
+  +children: React$Node,
+  +on: On[],
+  +inline?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

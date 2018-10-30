@@ -1,10 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import media from "../../utils/media";
+import media from "../../utils/mediaQuery";
 import defaultTokens from "../../defaultTokens";
 import { StyledButton } from "../../Button";
+import { DEVICES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
@@ -13,9 +14,9 @@ const StyledChild = styled.div`
   box-sizing: border-box;
   padding-right: ${({ theme }) => theme.orbit.spaceMedium};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     flex: none;
-  `};
+  `)};
 `;
 
 StyledChild.defaultProps = {
@@ -32,19 +33,19 @@ export const StyledModalFooter = styled.div`
   box-sizing: border-box;
   // TODO: create token boxShadowActionableInverted
 
-  @media (max-width: 599px) {
+  @media (max-width: ${DEVICES.largeMobile - 1}px) {
     ${StyledButton} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
     }
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
     border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `};
+  `)};
 
   ${StyledChild}:last-of-type {
     padding-right: 0;

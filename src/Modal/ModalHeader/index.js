@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Text from "../../Text";
 import Heading from "../../Heading";
 import defaultTokens from "../../defaultTokens";
-import media from "../../utils/media";
+import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
 
 import type { Props } from "./index";
@@ -50,7 +50,7 @@ const StyledModalHeader = styled.div`
     margin-top: ${({ suppressed }) => suppressed && "0!important"};
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     padding: ${({ theme, illustration, suppressed }) =>
       illustration
         ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge} ${
@@ -59,7 +59,7 @@ const StyledModalHeader = styled.div`
         : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
             suppressed ? theme.orbit.spaceXXLarge : "0"
           } ${theme.orbit.spaceXXLarge}`};
-  `};
+  `)};
 `;
 
 StyledModalHeader.defaultProps = {
@@ -86,9 +86,9 @@ export const MobileHeader = styled.div`
     opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 1;
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     display: none;
-  `};
+  `)};
 `;
 
 MobileHeader.defaultProps = {

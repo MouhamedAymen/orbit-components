@@ -99,7 +99,7 @@ exports[`Storyshots Stack Default 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG fQiMEb"
+            className="Stack__StyledStack-cGIpQG aMVFi"
           >
             <button
               className="Button__StyledButton-jJDkJK ckskmt"
@@ -565,7 +565,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG eDhDqW"
+            className="Stack__StyledStack-cGIpQG DGSaZ"
           >
             <label
               className="InputField__Field-hAVqzR gZONT"
@@ -1107,7 +1107,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG fpFbKt"
+            className="Stack__StyledStack-cGIpQG dUKSVs"
           >
             <button
               className="Button__StyledButton-jJDkJK ckskmt"
@@ -1833,10 +1833,10 @@ exports[`Storyshots Stack Nested example 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG bzieZt"
+            className="Stack__StyledStack-cGIpQG fSFcyj"
           >
             <div
-              className="Stack__StyledStack-cGIpQG jANIke"
+              className="Stack__StyledStack-cGIpQG jhdRiK"
             >
               <p
                 className="Text__StyledText-guhEiE bIsGZK"
@@ -1856,7 +1856,7 @@ exports[`Storyshots Stack Nested example 1`] = `
               </svg>
             </div>
             <div
-              className="Stack__StyledStack-cGIpQG iQsLAl"
+              className="Stack__StyledStack-cGIpQG kgXUua"
             >
               <label
                 className="InputField__Field-hAVqzR gZONT"
@@ -3003,7 +3003,7 @@ exports[`Storyshots Stack Playground 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG kqNAjL"
+            className="Stack__StyledStack-cGIpQG bsiyKL"
           >
             <button
               className="Button__StyledButton-jJDkJK kMRFdd"

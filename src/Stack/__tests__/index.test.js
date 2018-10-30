@@ -8,6 +8,7 @@ import Button from "../../Button";
 import { ALIGNS, DIRECTIONS, SPACINGS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTokens from "../../defaultTokens";
+import { breakpoints } from "../../utils/mediaQuery";
 
 describe("Default Stack", () => {
   const spacing = SPACINGS.EXTRALOOSE;
@@ -45,7 +46,7 @@ describe("Default Stack", () => {
       modifier: "& > *",
     });
     expect(component).toHaveStyleRule("margin", "0 0 40px 0", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });
@@ -129,34 +130,34 @@ describe("Stack with enabled flex", () => {
   });
   it("should contain desktop styles", () => {
     expect(component).toHaveStyleRule("display", "inline-flex", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("flex-direction", "column", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("flex-wrap", "wrap", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("flex-shrink", "0", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("flex-grow", "1", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("flex-basis", "auto", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("align-content", "flex-start", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("align-items", "flex-start", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("margin", "0 0 12px 0", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });

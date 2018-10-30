@@ -261,13 +261,13 @@ exports[`Default Stack should match snapshot 1`] = `
   display: none;
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c0 > * {
     margin: 0 0 40px 0;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c11 > .c8 {
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -6825,7 +6825,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   display: none;
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c0 {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;

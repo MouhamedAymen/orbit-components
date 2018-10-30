@@ -31,7 +31,7 @@ import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
-import typeof mediaType from "./utils/media";
+import typeof mediaQueriesType, { breakpoints as breakpointsType } from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
 import typeof ModalType from "./Modal";
 import typeof ModalHeaderType from "./Modal/ModalHeader";
@@ -106,4 +106,5 @@ declare export var Tile: TileType;
 
 declare export var defaultTheme: any;
 
-declare export var media: mediaType;
+declare export var mediaQueries: mediaQueriesType;
+declare export var breakpoints: breakpointsType;

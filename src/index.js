@@ -60,4 +60,4 @@ export { default as Tile } from "./Tile";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
-export { default as media } from "./utils/media";
+export { default as mediaQueries, breakpoints } from "./utils/mediaQuery";

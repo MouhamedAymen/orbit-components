@@ -99,19 +99,19 @@ exports[`Storyshots Modal Full preview 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud dfMCLs"
+            className="Modal__ModalBody-jsvBud eUrlXL"
             data-test="test"
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS gSESjZ"
+              className="Modal__ModalWrapper-ioqsnS irCqXl"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA gfJkay"
+                className="Modal__ModalWrapperContent-dXDxzA lcOJPL"
                 size="normal"
               >
                 <div
@@ -143,7 +143,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
+                  className="ModalHeader__StyledModalHeader-hOPket kZscYG"
                   data-test={undefined}
                 >
                   <img
@@ -175,13 +175,13 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
+                    className="ModalHeader__MobileHeader-hyztNg feCbCa"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -192,7 +192,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -203,7 +203,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -214,11 +214,11 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-heDwTy kuRjye"
+                  className="ModalFooter__StyledModalFooter-heDwTy ipjHTc"
                   data-test={undefined}
                 >
                   <div
-                    className="ModalFooter__StyledChild-bPOqEy jRvsYD"
+                    className="ModalFooter__StyledChild-bPOqEy jqoWEj"
                   >
                     <button
                       className="Button__StyledButton-jJDkJK jzykRp"
@@ -250,7 +250,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-bPOqEy xynvR"
+                    className="ModalFooter__StyledChild-bPOqEy hfiLpv"
                   >
                     <button
                       className="Button__StyledButton-jJDkJK jXpokS"
@@ -1518,19 +1518,19 @@ exports[`Storyshots Modal Sizes 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud dfMCLs"
+            className="Modal__ModalBody-jsvBud eUrlXL"
             data-test={undefined}
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS gSESjZ"
+              className="Modal__ModalWrapper-ioqsnS irCqXl"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA gfJkay"
+                className="Modal__ModalWrapperContent-dXDxzA lcOJPL"
                 size="normal"
               >
                 <div
@@ -1562,7 +1562,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
+                  className="ModalHeader__StyledModalHeader-hOPket ioEbzH"
                   data-test={undefined}
                 >
                   <div
@@ -1581,13 +1581,13 @@ exports[`Storyshots Modal Sizes 1`] = `
                     I'm lovely description
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
+                    className="ModalHeader__MobileHeader-hyztNg feCbCa"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -1598,7 +1598,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -1609,7 +1609,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
@@ -1620,7 +1620,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-bVxlGf leVcbp"
                   data-test={undefined}
                 >
                   <p
