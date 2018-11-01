@@ -9,6 +9,7 @@ import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
+import CLOSE_BUTTON_DATA_TEST from "./consts";
 
 import type { Props, State } from "./index";
 
@@ -220,6 +221,7 @@ class Card extends React.Component<Props, State> {
         {closable && (
           <CloseContainer>
             <ButtonLink
+              dataTest={CLOSE_BUTTON_DATA_TEST}
               type="secondary"
               size="small"
               icon={<Close />}

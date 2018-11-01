@@ -5,14 +5,14 @@ import styled, { css } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import SIZES from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 
-import type { Props, State, CloseElementType } from "./index";
+import type { Props, State } from "./index";
 
 const getSizeToken = () => ({ size }) => {
   const tokens = {
@@ -194,12 +194,6 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CloseElement = ({ onClose, closable }: CloseElementType) => (
-  <CloseContainer>
-    {closable && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
-  </CloseContainer>
-);
-
 class Modal extends React.PureComponent<Props, State> {
   constructor() {
     super();
@@ -316,7 +310,17 @@ class Modal extends React.PureComponent<Props, State> {
             fixedClose={fixedClose}
             fullyScrolled={fullyScrolled}
           >
-            <CloseElement onClose={onClose} closable={closable} />
+            <CloseContainer>
+              {closable && (
+                <ButtonLink
+                  dataTest={CLOSE_BUTTON_DATA_TEST}
+                  onClick={onClose}
+                  size="normal"
+                  icon={<Close />}
+                  transparent
+                />
+              )}
+            </CloseContainer>
             {children}
           </ModalWrapperContent>
         </ModalWrapper>

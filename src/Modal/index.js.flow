@@ -22,11 +22,6 @@ type onClose = (
   ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,
 ) => void | Promise<any>;
 
-export type CloseElementType = {
-  +onClose?: onClose,
-  +closable?: boolean,
-};
-
 export type Props = {|
   +size?: Size,
   +children: Array<Children> | Children,
