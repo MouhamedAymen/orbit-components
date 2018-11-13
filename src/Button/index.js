@@ -1,48 +1,55 @@
 // @flow
 import * as React from "react";
+import { View } from "react-native";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { ICON_SIZES } from "../Icon/consts";
-import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS, TYPE_TOKENS, SIZE_TOKENS } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
 import { getSize } from "../Icon";
+import {
+  SharedStyledButtonWrapper,
+  sharedTextStyle,
+  SharedIconContainer,
+  SharedIconContainerRight,
+} from "./shared";
 
 import type { Props } from "./index";
 
 const getSizeToken = name => ({ theme, size }) => {
   const tokens = {
-    [TOKENS.heightButton]: {
+    [SIZE_TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightButtonSmall,
     },
-    [TOKENS.loadingWidth]: {
+    [SIZE_TOKENS.loadingWidth]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.widthIconMedium,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
       [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
     },
-    [TOKENS.loadingHeight]: {
+    [SIZE_TOKENS.loadingHeight]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightIconMedium,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightIconMedium,
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightIconSmall,
     },
-    [TOKENS.fontSizeButton]: {
+    [SIZE_TOKENS.fontSizeButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeButtonSmall,
     },
-    [TOKENS.paddingButton]: {
+    [SIZE_TOKENS.paddingButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
     },
-    [TOKENS.paddingButtonWithIcon]: {
+    [SIZE_TOKENS.paddingButtonWithIcon]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
       [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
     },
-    [TOKENS.marginRightIcon]: {
+    [SIZE_TOKENS.marginRightIcon]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.marginButtonIconLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.marginButtonIconNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.marginButtonIconSmall,
@@ -52,7 +59,7 @@ const getSizeToken = name => ({ theme, size }) => {
 };
 const getTypeToken = name => ({ theme, type }) => {
   const tokens = {
-    [TOKENS.backgroundButton]: {
+    [TYPE_TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondary,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonInfo,
@@ -63,7 +70,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogle,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token backgroundButtonWhite
     },
-    [TOKENS.backgroundButtonHover]: {
+    [TYPE_TOKENS.backgroundButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondaryHover,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonInfoHover,
@@ -74,7 +81,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleHover,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteHover, // TODO: token backgroundButtonWhiteHover
     },
-    [TOKENS.backgroundButtonActive]: {
+    [TYPE_TOKENS.backgroundButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondaryActive,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonInfoActive,
@@ -85,7 +92,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleActive,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteActive, // TODO: token backgroundButtonWhiteActive
     },
-    [TOKENS.backgroundButtonBordered]: {
+    [TYPE_TOKENS.backgroundButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBordered,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBordered,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBordered,
@@ -96,7 +103,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBordered,
       [TYPE_OPTIONS.WHITE]: "transparent", // TODO: token backgroundButtonWhiteBordered
     },
-    [TOKENS.backgroundButtonBorderedHover]: {
+    [TYPE_TOKENS.backgroundButtonBorderedHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBorderedHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBorderedHover,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBorderedHover,
@@ -107,7 +114,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBorderedHover,
       [TYPE_OPTIONS.WHITE]: "rgba(255, 255, 255, 0.2)", // TODO: token backgroundButtonWhiteBorderedHover
     },
-    [TOKENS.backgroundButtonBorderedActive]: {
+    [TYPE_TOKENS.backgroundButtonBorderedActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBorderedActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBorderedActive,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBorderedActive,
@@ -118,7 +125,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBorderedActive,
       [TYPE_OPTIONS.WHITE]: "rgba(255, 255, 255, 0.25)", // TODO: token backgroundButtonWhiteBorderedActive
     },
-    [TOKENS.colorTextButton]: {
+    [TYPE_TOKENS.colorTextButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondary,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfo,
@@ -129,7 +136,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogle,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormal, // TODO: token colorTextButtonWhite
     },
-    [TOKENS.colorTextButtonBordered]: {
+    [TYPE_TOKENS.colorTextButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBordered,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryBordered,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoBordered,
@@ -140,7 +147,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBordered,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBordered
     },
-    [TOKENS.colorTextButtonHover]: {
+    [TYPE_TOKENS.colorTextButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryHover,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoHover,
@@ -151,7 +158,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleHover,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormalHover, // TODO: token colorTextButtonWhiteHover
     },
-    [TOKENS.colorTextButtonBorderedHover]: {
+    [TYPE_TOKENS.colorTextButtonBorderedHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBorderedHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryBorderedHover,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoBorderedHover,
@@ -162,7 +169,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBorderedHover,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBorderedHover
     },
-    [TOKENS.colorTextButtonActive]: {
+    [TYPE_TOKENS.colorTextButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryActive,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoActive,
@@ -173,7 +180,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleActive,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormalActive, // TODO: token colorTextButtonWhiteActive
     },
-    [TOKENS.colorTextButtonBorderedActive]: {
+    [TYPE_TOKENS.colorTextButtonBorderedActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBorderedActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryBorderedActive,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoBorderedActive,
@@ -184,7 +191,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBorderedActive,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBorderedActive
     },
-    [TOKENS.borderColorButton]: {
+    [TYPE_TOKENS.borderColorButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBordered,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.borderColorButtonSecondaryBordered,
       [TYPE_OPTIONS.INFO]: theme.orbit.borderColorButtonInfoBordered,
@@ -195,7 +202,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBordered,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token borderColorButtonWhiteBordered
     },
-    [TOKENS.borderColorButtonHover]: {
+    [TYPE_TOKENS.borderColorButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBorderedHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.borderColorButtonSecondaryBorderedHover,
       [TYPE_OPTIONS.INFO]: theme.orbit.borderColorButtonInfoBorderedHover,
@@ -206,7 +213,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBorderedHover,
       [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token borderColorButtonWhiteBorderedHover
     },
-    [TOKENS.borderColorButtonActive]: {
+    [TYPE_TOKENS.borderColorButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBorderedActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.borderColorButtonSecondaryBorderedActive,
       [TYPE_OPTIONS.INFO]: theme.orbit.borderColorButtonInfoBorderedActive,
@@ -221,16 +228,11 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-right: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
+const IconContainer = styled(SharedIconContainer)`
   color: ${({ bordered }) =>
-    bordered ? getTypeToken(TOKENS.colorTextButtonBordered) : getTypeToken(TOKENS.colorTextButton)};
+    bordered
+      ? getTypeToken(TYPE_TOKENS.colorTextButtonBordered)
+      : getTypeToken(TYPE_TOKENS.colorTextButton)};
   transition: background ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -240,18 +242,7 @@ const IconContainer = styled(({ className, children }) => (
   }
 `;
 
-IconContainer.defaultProps = {
-  theme: defaultTokens,
-};
-
-const IconContainerRight = styled(IconContainer)`
-  margin-right: 0;
-  margin-left: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
-`;
-
-IconContainerRight.defaultProps = {
-  theme: defaultTokens,
-};
+const IconContainerRight = SharedIconContainerRight(IconContainer);
 
 export const StyledButton = styled(
   ({
@@ -284,75 +275,59 @@ export const StyledButton = styled(
     );
   },
 )`
-  position: relative;
   display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  appearance: none;
   text-decoration: none;
   width: ${({ block, width, onlyIcon }) =>
     block
       ? "100%"
-      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
-  flex: ${({ block }) => (block ? "1 1 100%" : "0 0 auto")};
-  height: ${getSizeToken(TOKENS.heightButton)};
-  background: ${({ bordered }) =>
-    bordered
-      ? getTypeToken(TOKENS.backgroundButtonBordered)
-      : getTypeToken(TOKENS.backgroundButton)};
-  color: ${({ bordered }) =>
-    bordered
-      ? getTypeToken(TOKENS.colorTextButtonBordered)
-      : getTypeToken(TOKENS.colorTextButton)} !important;
-  border: 0;
-  border-radius: ${({ theme, circled }) =>
-    circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
+      : (width && `${width}px`) || (onlyIcon && getSizeToken(SIZE_TOKENS.heightButton)) || "auto"};
+  outline: 0;
   padding: 0;
-  padding-right: ${({ onlyIcon, iconRight }) =>
-    (onlyIcon && "0") ||
-    (iconRight ? getSizeToken(TOKENS.paddingButtonWithIcon) : getSizeToken(TOKENS.paddingButton))};
-  padding-left: ${({ onlyIcon, icon, iconLeft }) =>
-    (onlyIcon && "0") ||
-    (iconLeft || icon
-      ? getSizeToken(TOKENS.paddingButtonWithIcon)
-      : getSizeToken(TOKENS.paddingButton))};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
-  font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  border: 0;
+  pointer-events: ${({ disabled, loading }) => (disabled || loading) && "none"};
+  cursor: ${({ disabled, loading }) => (disabled || loading ? "default" : "pointer")};
+  ${props => sharedTextStyle(props)}
+`;
+
+StyledButton.defaultProps = {
+  theme: defaultTokens,
+};
+
+const StyledButtonWrapper = styled(SharedStyledButtonWrapper)`
+  display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
+  flex: ${({ block }) => (block ? "1 1 100%" : "0 0 auto")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
-  pointer-events: ${({ disabled }) => disabled && "none"};
   box-shadow: ${({ bordered, theme, type }) =>
     bordered &&
-    `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({
+    `inset 0 0 0 1px ${getTypeToken(TYPE_TOKENS.borderColorButton)({
       theme,
       type,
-    })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TOKENS.borderColorButton)
+    })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TYPE_TOKENS.borderColorButton)
 
   &:hover {
     background: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? getTypeToken(TOKENS.backgroundButtonBorderedHover)
-        : getTypeToken(TOKENS.backgroundButtonHover))};
+        ? getTypeToken(TYPE_TOKENS.backgroundButtonBorderedHover)
+        : getTypeToken(TYPE_TOKENS.backgroundButtonHover))};
     box-shadow: ${({ disabled, bordered, theme, type }) =>
       !disabled &&
       bordered &&
-      `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)({ theme, type })}`};
+      `inset 0 0 0 1px ${getTypeToken(TYPE_TOKENS.borderColorButtonHover)({ theme, type })}`};
     color: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-        : getTypeToken(TOKENS.colorTextButtonHover))}!important;
+        ? getTypeToken(TYPE_TOKENS.colorTextButtonBorderedHover)
+        : getTypeToken(TYPE_TOKENS.colorTextButtonHover))}!important;
 
     ${IconContainer} {
       color: ${({ disabled, bordered }) =>
         !disabled &&
         (bordered
-          ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-          : getTypeToken(TOKENS.colorTextButtonHover))};
+          ? getTypeToken(TYPE_TOKENS.colorTextButtonBorderedHover)
+          : getTypeToken(TYPE_TOKENS.colorTextButtonHover))};
     }
   }
 
@@ -362,46 +337,44 @@ export const StyledButton = styled(
     background: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? getTypeToken(TOKENS.backgroundButtonBorderedActive)
-        : getTypeToken(TOKENS.backgroundButtonActive))};
+        ? getTypeToken(TYPE_TOKENS.backgroundButtonBorderedActive)
+        : getTypeToken(TYPE_TOKENS.backgroundButtonActive))};
     box-shadow: ${({ disabled, bordered, theme, type }) =>
       !disabled &&
       (bordered &&
-        `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)({ theme, type })}`)};
+        `inset 0 0 0 1px ${getTypeToken(TYPE_TOKENS.borderColorButtonActive)({ theme, type })}`)};
     color: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-        : getTypeToken(TOKENS.colorTextButtonActive))}!important;
+        ? getTypeToken(TYPE_TOKENS.colorTextButtonBorderedActive)
+        : getTypeToken(TYPE_TOKENS.colorTextButtonActive))}!important;
     & ${IconContainer} {
       color: ${({ disabled, bordered }) =>
         !disabled &&
         (bordered
-          ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-          : getTypeToken(TOKENS.colorTextButtonActive))};
+          ? getTypeToken(TYPE_TOKENS.colorTextButtonBorderedActive)
+          : getTypeToken(TYPE_TOKENS.colorTextButtonActive))};
     }
   }
 
   &:enabled:focus {
     box-shadow: ${({ bordered, theme, type }) =>
-        bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
+        bordered &&
+        `inset 0 0 0 1px ${getTypeToken(TYPE_TOKENS.borderColorButton)({ theme, type })},`}
       ${({ theme }) => theme.orbit.boxShadowButtonFocus};
   }
 
   ${StyledSpinner} {
-    width: ${getSizeToken(TOKENS.loadingWidth)};
-    height: ${getSizeToken(TOKENS.loadingHeight)};
+    width: ${getSizeToken(SIZE_TOKENS.loadingWidth)};
+    height: ${getSizeToken(SIZE_TOKENS.loadingHeight)};
   }
 `;
 
-StyledButton.defaultProps = {
-  theme: defaultTokens,
-};
-
-const StyledButtonContent = styled.div`
+const StyledButtonContent = styled(View)`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
@@ -425,53 +398,62 @@ const Button = (props: Props) => {
     block,
     loading = false,
     width = 0,
+    circled,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
   const onlyIcon = iconLeft && !children;
-  const isDisabled = loading || disabled;
 
   return (
     <StyledButton
-      bordered={bordered}
       block={block}
       component={component}
-      disabled={isDisabled}
-      loading={loading}
       onlyIcon={onlyIcon}
       size={size}
-      sizeIcon={sizeIcon}
       target={href && external ? "_blank" : undefined}
       type={type}
       width={width}
       {...props}
     >
-      {loading && <Loading type="buttonLoader" />}
-      <StyledButtonContent loading={loading}>
-        {iconLeft && (
-          <IconContainer
-            bordered={bordered}
-            onlyIcon={onlyIcon}
-            size={size}
-            sizeIcon={sizeIcon}
-            type={type}
-          >
-            {iconLeft}
-          </IconContainer>
-        )}
-        {children}
-        {iconRight && (
-          <IconContainerRight
-            bordered={bordered}
-            onlyIcon={onlyIcon}
-            size={size}
-            sizeIcon={sizeIcon}
-            type={type}
-          >
-            {iconRight}
-          </IconContainerRight>
-        )}
-      </StyledButtonContent>
+      <StyledButtonWrapper
+        bordered={bordered}
+        block={block}
+        disabled={disabled}
+        loading={loading}
+        onlyIcon={onlyIcon}
+        size={size}
+        sizeIcon={sizeIcon}
+        type={type}
+        width={width}
+        circled={circled}
+      >
+        {loading && <Loading type="buttonLoader" />}
+        <StyledButtonContent loading={loading}>
+          {iconLeft && (
+            <IconContainer
+              bordered={bordered}
+              onlyIcon={onlyIcon}
+              size={size}
+              sizeIcon={sizeIcon}
+              type={type}
+            >
+              {iconLeft}
+            </IconContainer>
+          )}
+          {children}
+          {iconRight && (
+            <IconContainerRight
+              bordered={bordered}
+              onlyIcon={onlyIcon}
+              size={size}
+              sizeIcon={sizeIcon}
+              type={type}
+            >
+              {iconRight}
+            </IconContainerRight>
+          )}
+        </StyledButtonContent>
+      </StyledButtonWrapper>
     </StyledButton>
   );
 };

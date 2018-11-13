@@ -1,0 +1,53 @@
+// @flow strict
+
+import * as React from "react";
+
+type AccessibilityRoleValues =
+  | "none"
+  | "button"
+  | "link"
+  | "search"
+  | "image"
+  | "keyboardkey"
+  | "text"
+  | "adjustable"
+  | "imagebutton"
+  | "header"
+  | "summary";
+
+// See: https://facebook.github.io/react-native/docs/accessibility.html
+type AccessibilityProps = {|
+  accessible?: boolean,
+  accessibilityLabel?: string,
+  accessibilityHint?: string,
+  accessibilityRole?: AccessibilityRoleValues,
+  accessibilityState?: "selected" | "disabled",
+  accessibilityViewIsModal?: boolean, // iOS only
+  accessibilityIgnoresInvertColors?: boolean, // iOS only
+  accessibilityElementsHidden?: boolean, // iOS only
+  onAccessibilityTap?: Function, // iOS only
+  onMagicTap?: Function, // iOS only
+  accessibilityLiveRegion?: "none" | "polite" | "assertive", // Android only
+  importantForAccessibility?: "auto" | "yes" | "no" | "no-hide-descendants", // Android only
+|};
+
+export type Props = {|
+  +children: React.Node,
+  +onPress: Function,
+  +disabled: boolean,
+  +onLongPress?: Function,
+  +delayPressIn?: number,
+  // This will disable ripple effect completely and it will fallback to the
+  // opacity behavior.
+  +noRipple?: boolean,
+  // Should the ripple render outside of the view bounds?
+  +borderlessRipple?: boolean,
+  +rippleColor?: string,
+  +width?: string | number,
+  ...AccessibilityProps,
+|};
+
+declare export var StyledTouchableOpacity: React$ComponentType<Props>;
+declare export var StyledTouchableNativeFeedback: React$ComponentType<Props>;
+
+declare export default React$ComponentType<Props>;

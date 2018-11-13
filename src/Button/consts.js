@@ -17,8 +17,7 @@ export const SIZE_OPTIONS = {
   LARGE: "large",
 };
 
-export const TOKENS = {
-  // Size tokens
+export const SIZE_TOKENS = {
   heightButton: "heightButton",
   loadingWidth: "loadingWidth",
   loadingHeight: "loadingHeight",
@@ -26,7 +25,9 @@ export const TOKENS = {
   paddingButton: "paddingButton",
   paddingButtonWithIcon: "paddingButtonWithIcon",
   marginRightIcon: "marginRightIcon",
-  // Type tokens
+};
+
+export const TYPE_TOKENS = {
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",
   backgroundButtonActive: "backgroundButtonActive",

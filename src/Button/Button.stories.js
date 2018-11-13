@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+import {Text} from  'react-native';
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
@@ -35,7 +36,12 @@ storiesOf("Button", module)
         {
           sections: [
             {
-              sectionFn: () => <Button onClick={action("clicked")}>{title}</Button>,
+              sectionFn: () => <Button onClick={action("clicked")}>
+              <Text>
+
+              {title}
+              </Text>
+              </Button>,
             },
           ],
         },
@@ -57,7 +63,12 @@ storiesOf("Button", module)
             {
               sectionFn: () => (
                 <Button onClick={action("clicked")} block={block} type={type} size={size}>
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -90,7 +101,12 @@ storiesOf("Button", module)
                   iconLeft={IconLeft && <IconLeft />}
                   iconRight={IconRight && <IconRight />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -103,7 +119,12 @@ storiesOf("Button", module)
                   size={size}
                   iconRight={IconRight && <IconRight />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -163,7 +184,12 @@ storiesOf("Button", module)
                   size="small"
                   iconLeft={IconLeft && <IconLeft />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -175,7 +201,12 @@ storiesOf("Button", module)
                   size="small"
                   iconLeft={IconLeft && <IconLeft />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -187,7 +218,12 @@ storiesOf("Button", module)
                   size="small"
                   iconLeft={IconLeft && <IconLeft />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -199,7 +235,12 @@ storiesOf("Button", module)
                   size="small"
                   iconLeft={IconLeft && <IconLeft />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -259,7 +300,12 @@ storiesOf("Button", module)
                   size={size}
                   iconLeft={<Icons.Remove />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -292,7 +338,12 @@ storiesOf("Button", module)
                   bordered
                   iconLeft={<Icons.Airplane />}
                 >
+                  
+                  <Text>
+
                   {title}
+                  </Text>
+
                 </Button>
               ),
             },
@@ -345,7 +396,10 @@ storiesOf("Button", module)
                   submit={submit}
                   width={width}
                 >
+                  
+                <Text>
                   {title}
+                  </Text>
                 </Button>
               ),
             },
