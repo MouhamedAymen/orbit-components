@@ -266,6 +266,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     help,
     value,
     tabIndex,
+    readOnly,
   } = props;
 
   return (
@@ -297,6 +298,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           error={error}
           ref={ref}
           tabIndex={tabIndex}
+          readOnly={readOnly}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
