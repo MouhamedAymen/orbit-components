@@ -6,7 +6,7 @@ import { shallow } from "enzyme";
 import RatingStars from "../index";
 import StarFull from "../../icons/StarFull";
 import StarEmpty from "../../icons/StarEmpty";
-import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
+import { ICON_COLORS, ICON_SIZES, FORMAT } from "../../Icon/consts";
 
 describe("RatingStars", () => {
   const dataTest = "test";
@@ -14,7 +14,22 @@ describe("RatingStars", () => {
   const color = ICON_COLORS.ATTENTION;
   const size = ICON_SIZES.LARGE;
   const component = shallow(
-    <RatingStars rating={rating} size={size} color={color} dataTest={dataTest} />,
+    <RatingStars
+      rating={rating}
+      size={size}
+      color={color}
+      format={FORMAT.NORMAL}
+      dataTest={dataTest}
+    />,
+  );
+  const hotel = shallow(
+    <RatingStars
+      rating={rating}
+      size={size}
+      color={color}
+      format={FORMAT.HOTEL}
+      dataTest={dataTest}
+    />,
   );
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
@@ -26,10 +41,13 @@ describe("RatingStars", () => {
       expect(node.prop("color")).toBe(color);
     });
   });
-  it("should render 4 full stars and 1 empty", () => {
+  it("should render 2 full stars and 3 empty", () => {
     component.children().forEach((node, key) => {
       expect(node.type()).toBe(key <= Math.round(rating) - 1 ? StarFull : StarEmpty);
     });
+  });
+  it("should render only 2 full stars", () => {
+    expect(hotel.children()).toHaveLength(Math.round(rating));
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

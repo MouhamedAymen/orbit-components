@@ -5,7 +5,7 @@ import RatingStars from "@kiwicom/orbit-components/lib/RatingStars";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<RatingStars rating={3} size="medium" color="attention" />
+<RatingStars rating={3} size="medium" color="attention" format="hotel" />
 ```
 ## Props
 Table below contains all types of the props available in RatingStars component.
@@ -15,13 +15,14 @@ Table below contains all types of the props available in RatingStars component.
 | color        | [`enum`](#enum)     | `"primary"`  | The color of stars.
 | dataTest     | `string`            |              | Optional prop for testing purposes.
 | size         | [`enum`](#enum)     | `"small"`    | The size of stars.
+| format       | [`enum`](#enum)     | `"normal"`    | The `"normal"` format display also empty stars. `"hotel"` format display only full stars.
 | **rating**   | `number`            |              | The rating number to display.
 
 
 ### enum
 
-| size       | color          |
-| :--------- | :------------- |
-| `"small"`  | `"primary"`
-| `"medium"` | `"secondary"`
-| `"large"`  | `"attention"`
+| size       | color          | format      |
+| :--------- | :------------- | :---------- |
+| `"small"`  | `"primary"`    | `"normal"`
+| `"medium"` | `"secondary"`  | `"hotel"`
+| `"large"`  | `"attention"`  |

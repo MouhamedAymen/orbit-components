@@ -6,7 +6,7 @@ import StarEmpty from "../icons/StarEmpty";
 import StarFull from "../icons/StarFull";
 import defaultTokens from "../defaultTokens";
 import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
+import { ICON_COLORS, ICON_SIZES, FORMAT } from "../Icon/consts";
 
 import type { Props } from "./index";
 
@@ -30,17 +30,22 @@ const RatingStars = ({
   size = ICON_SIZES.SMALL,
   dataTest,
   color = ICON_COLORS.PRIMARY,
-}: Props) => (
-  <StyledRatingStars data-test={dataTest} size={size}>
-    {Array(...Array(MAX_STARS)).map((_, index) => {
-      const key = `star-${index}`;
-      return index <= Math.round(rating) - 1 ? (
-        <StarFull key={key} size={size} color={color} />
-      ) : (
-        <StarEmpty key={key} size={size} color={color} />
-      );
-    })}
-  </StyledRatingStars>
-);
+  format = FORMAT.NORMAL,
+}: Props) => {
+  const ratingRounded = Math.round(rating);
+  const starsCount = format === FORMAT.HOTEL ? ratingRounded : MAX_STARS;
+  return (
+    <StyledRatingStars data-test={dataTest} size={size}>
+      {Array(...Array(starsCount)).map((_, index) => {
+        const key = `star-${index}`;
+        return index <= ratingRounded - 1 ? (
+          <StarFull key={key} size={size} color={color} />
+        ) : (
+          <StarEmpty key={key} size={size} color={color} />
+        );
+      })}
+    </StyledRatingStars>
+  );
+};
 
 export default RatingStars;
