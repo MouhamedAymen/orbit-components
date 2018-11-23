@@ -3,10 +3,10 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, number, text, select } from "@storybook/addon-knobs";
+import { withKnobs, number, text, select, boolean } from "@storybook/addon-knobs";
 
 import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES, FORMAT } from "../Icon/consts";
+import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import RatingStars from "./";
@@ -29,7 +29,7 @@ storiesOf("RatingStars", module)
       ICON_COLORS.SECONDARY,
       ICON_COLORS.ATTENTION,
     ]);
-    const format = select("format", [undefined, FORMAT.NORMAL, FORMAT.HOTEL]);
+    const showEmpty = boolean("showEmpty", true);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -43,7 +43,7 @@ storiesOf("RatingStars", module)
                   rating={rating}
                   size={size}
                   color={color}
-                  format={format}
+                  showEmpty={showEmpty}
                   dataTest={dataTest}
                 />
               ),

@@ -15,8 +15,3 @@ export const ICON_COLORS = {
   WARNING: "warning",
   CRITICAL: "critical",
 };
-
-export const FORMAT = {
-  NORMAL: "normal",
-  HOTEL: "hotel",
-};

@@ -6,7 +6,7 @@ import { shallow } from "enzyme";
 import RatingStars from "../index";
 import StarFull from "../../icons/StarFull";
 import StarEmpty from "../../icons/StarEmpty";
-import { ICON_COLORS, ICON_SIZES, FORMAT } from "../../Icon/consts";
+import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
 
 describe("RatingStars", () => {
   const dataTest = "test";
@@ -14,22 +14,10 @@ describe("RatingStars", () => {
   const color = ICON_COLORS.ATTENTION;
   const size = ICON_SIZES.LARGE;
   const component = shallow(
-    <RatingStars
-      rating={rating}
-      size={size}
-      color={color}
-      format={FORMAT.NORMAL}
-      dataTest={dataTest}
-    />,
+    <RatingStars rating={rating} size={size} color={color} showEmpty dataTest={dataTest} />,
   );
   const hotel = shallow(
-    <RatingStars
-      rating={rating}
-      size={size}
-      color={color}
-      format={FORMAT.HOTEL}
-      dataTest={dataTest}
-    />,
+    <RatingStars rating={rating} size={size} color={color} dataTest={dataTest} />,
   );
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
